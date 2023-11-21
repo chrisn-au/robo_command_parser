@@ -12,9 +12,11 @@ function parseRoborockFile(filePath) {
     let jsonStr;
     lines.forEach(line => {
         try {
-            const protocolStart = line.indexOf("protocol=");
-            const protocol = line.substring(protocolStart+9, protocolStart+10);
-            
+            const protocolEquals = "protocol=";
+            const length = protocolEquals.length;
+            const protocolStart = line.indexOf(protocolEquals);
+            const protocol = line.substring(protocolStart + length, protocolStart + length + 1); 
+
             const start = line.indexOf("payload=b'") + 10;
             const end = line.lastIndexOf("}'");
 
