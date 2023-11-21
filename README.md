@@ -1,0 +1,1 @@
+# Parses responses from Roborock CLI
